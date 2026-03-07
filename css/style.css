@@ -2,9 +2,12 @@
     --primary-color: #645E2A; /* rgb(100, 94, 42) extracted from photo */
     --hover-color: #8c8541;
     --text-color: #f8f8f8;
-    --header-bg: rgba(100, 94, 42, 0.85);
+    --header-bg: rgba(100, 94, 42, 0.90);
     --font-heading: 'Outfit', 'Inter', 'Segoe UI', sans-serif;
     --font-body: 'Inter', 'Segoe UI', sans-serif;
+    
+    --bg-light: #F8F7F2; /* Soft earthy off-white for scrolling content */
+    --text-dark: #333333;
 }
 
 * {
@@ -15,7 +18,7 @@
 
 body {
     font-family: var(--font-body);
-    background-color: #000;
+    background-color: var(--bg-light);
     color: var(--text-color);
 }
 
@@ -30,13 +33,38 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 3rem;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-mark {
+    width: 36px;
+    height: 36px;
+    background-color: var(--text-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.logo-icon {
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: 1.2rem;
 }
 
 .logo {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 800;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -47,7 +75,7 @@ header {
 nav > ul {
     list-style: none;
     display: flex;
-    gap: 3rem;
+    gap: 2.5rem;
 }
 
 nav > ul > li {
@@ -59,7 +87,7 @@ nav > ul > li > a {
     color: var(--text-color);
     text-decoration: none;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 0.95rem;
     padding-bottom: 0.5rem;
     transition: color 0.3s ease;
 }
@@ -104,8 +132,30 @@ nav ul li ul li a:hover {
     background: var(--hover-color);
 }
 
+/* Language Toggle */
+.lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.4);
+}
+
+.lang-toggle a {
+    color: var(--text-color);
+    text-decoration: none;
+    opacity: 0.5;
+    transition: opacity 0.3s ease, text-shadow 0.3s ease;
+}
+
+.lang-toggle a.active, .lang-toggle a:hover {
+    opacity: 1;
+    text-shadow: 0 0 8px rgba(255,255,255,0.4);
+}
+
 /* Page content */
-main.fullscreen-bg {
+.fullscreen-bg {
     height: 100vh;
     width: 100%;
     background-size: cover;
@@ -115,13 +165,14 @@ main.fullscreen-bg {
     align-items: center;
     justify-content: center;
     position: relative;
+    background-attachment: fixed; /* Parallax effect */
 }
 
-main.fullscreen-bg::before {
+.fullscreen-bg::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.3); /* dark overlay for text readability */
+    background: rgba(0, 0, 0, 0.4); /* dark overlay for text readability */
     z-index: 1;
 }
 
@@ -136,4 +187,32 @@ main.fullscreen-bg::before {
     text-align: center;
     text-shadow: 0 4px 12px rgba(0,0,0,0.6);
     padding: 0 20px;
+}
+
+/* Scrolling Content Section */
+.content-section {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    padding: 6rem 12vw;
+    min-height: 50vh;
+}
+
+.content-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.content-section h2 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    letter-spacing: -0.5px;
+}
+
+.content-section p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: #4a4a4a;
 }
