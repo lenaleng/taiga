@@ -168,8 +168,18 @@ nav ul li ul li a:hover {
     background-attachment: fixed; /* Parallax effect */
 }
 
-.fullscreen-bg::before {
-    content: '';
+/* Replaces the background image approach with a real img tag */
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero-overlay {
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.4); /* dark overlay for text readability */
