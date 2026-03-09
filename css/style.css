@@ -1,12 +1,14 @@
 :root {
-    --primary-color: #645E2A; /* rgb(100, 94, 42) extracted from photo */
+    --primary-color: #645E2A;
+    /* rgb(100, 94, 42) extracted from photo */
     --hover-color: #8c8541;
     --text-color: #f8f8f8;
     --header-bg: rgba(100, 94, 42, 0.90);
     --font-heading: 'Outfit', 'Inter', 'Segoe UI', sans-serif;
     --font-body: 'Inter', 'Segoe UI', sans-serif;
-    
-    --bg-light: #F8F7F2; /* Soft earthy off-white for scrolling content */
+
+    --bg-light: #F8F7F2;
+    /* Soft earthy off-white for scrolling content */
     --text-dark: #333333;
 }
 
@@ -41,49 +43,56 @@ header {
 .brand {
     display: flex;
     align-items: center;
-    gap: 1rem;
 }
 
-.logo-mark {
-    width: 36px;
-    height: 36px;
-    background-color: var(--text-color);
-    border-radius: 50%;
+.logo-stack {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-
-.logo-icon {
-    color: var(--primary-color);
-    font-family: var(--font-heading);
-    font-weight: 900;
-    font-size: 1.2rem;
-}
-
-.logo {
-    font-family: var(--font-heading);
-    font-size: 1.3rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    flex-direction: column;
     text-decoration: none;
     color: var(--text-color);
+    align-items: center;
 }
 
-nav > ul {
+.logo-main {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.logo-sub {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    white-space: nowrap;
+}
+
+html[lang="ru"] .logo-main {
+    font-size: 1.80rem;
+}
+
+html[lang="ru"] .logo-city {
+    font-size: 0.70rem;
+}
+
+nav>ul {
     list-style: none;
     display: flex;
     gap: 2.5rem;
 }
 
-nav > ul > li {
+nav>ul>li {
     position: relative;
     padding: 1rem 0;
 }
 
-nav > ul > li > a {
+nav>ul>li>a {
     color: var(--text-color);
     text-decoration: none;
     font-weight: 500;
@@ -92,7 +101,7 @@ nav > ul > li > a {
     transition: color 0.3s ease;
 }
 
-nav > ul > li > a:hover {
+nav>ul>li>a:hover {
     color: #e0d9b4;
 }
 
@@ -105,7 +114,7 @@ nav ul li ul {
     background: var(--primary-color);
     list-style: none;
     min-width: 200px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     border-radius: 8px;
     opacity: 0;
     visibility: hidden;
@@ -139,7 +148,7 @@ nav ul li ul li a:hover {
     gap: 0.5rem;
     font-size: 0.9rem;
     font-weight: 600;
-    color: rgba(255,255,255,0.4);
+    color: rgba(255, 255, 255, 0.4);
 }
 
 .lang-toggle a {
@@ -149,9 +158,10 @@ nav ul li ul li a:hover {
     transition: opacity 0.3s ease, text-shadow 0.3s ease;
 }
 
-.lang-toggle a.active, .lang-toggle a:hover {
+.lang-toggle a.active,
+.lang-toggle a:hover {
     opacity: 1;
-    text-shadow: 0 0 8px rgba(255,255,255,0.4);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
 }
 
 /* Page content */
@@ -165,7 +175,8 @@ nav ul li ul li a:hover {
     align-items: center;
     justify-content: center;
     position: relative;
-    background-attachment: fixed; /* Parallax effect */
+    background-attachment: fixed;
+    /* Parallax effect */
 }
 
 /* Replaces the background image approach with a real img tag */
@@ -182,7 +193,8 @@ nav ul li ul li a:hover {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.4); /* dark overlay for text readability */
+    background: rgba(0, 0, 0, 0.4);
+    /* dark overlay for text readability */
     z-index: 1;
 }
 
@@ -195,7 +207,7 @@ nav ul li ul li a:hover {
     text-transform: uppercase;
     letter-spacing: 4px;
     text-align: center;
-    text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
     padding: 0 20px;
 }
 
