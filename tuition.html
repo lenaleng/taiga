@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tuition | Taiga School San Francisco</title>
     <link href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@400;500;600;700&family=Inter:wght@400;500&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=2">
 </head>
 <body>
     <header>
@@ -58,10 +58,105 @@
         
         <section class="content-section">
             <div class="content-container">
-                <h2>Discover Tuition</h2>
-                <p>Welcome to Taiga School San Francisco. Our approach blends the beautiful organic principles of nature-based learning with a modern, structured educational environment. We believe that learning is an adventurous journey, one that starts in the roots of our community and blossoms through hands-on experiences.</p>
-                <p>Feel free to explore our offerings, understand our deeply held philosophy, and see how our teachers inspire the next generation of bright minds to grow, adapt, and thrive in an ever-changing world.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                <h2>Tuition Options</h2>
+                
+                <div style="margin-bottom: 2rem;">
+                    <div style="background: #fff; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--primary-color); box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <h3 style="margin-top: 0; color: var(--primary-color);">Full time</h3>
+                            <p style="margin-bottom: 0; color: #555;">9 am - 4 pm</p>
+                        </div>
+                        <div style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--primary-color);">
+                            $2100<span style="font-size: 0.9rem; font-weight: 400; color: #777;"> / mo</span>
+                        </div>
+                    </div>
+
+                    <div style="background: #fff; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--primary-color); box-shadow: 0 2px 8px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <h3 style="margin-top: 0; color: var(--primary-color);">Morning and lunch</h3>
+                            <p style="margin-bottom: 0; color: #555;">9 am - 1 pm</p>
+                        </div>
+                        <div style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--primary-color);">
+                            $1260<span style="font-size: 0.9rem; font-weight: 400; color: #777;"> / mo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <style>
+                    #part-time-accordion .faq-question:hover {
+                        background: #fdfdfd !important;
+                    }
+                    #part-time-accordion .faq-item.active .faq-question {
+                        border-radius: 8px 8px 0 0 !important;
+                    }
+                    #part-time-accordion .faq-icon {
+                        transition: transform 0.3s ease;
+                    }
+                    #part-time-accordion .faq-item.active .faq-icon {
+                        transform: rotate(45deg);
+                    }
+                </style>
+                <div class="faq-accordion" id="part-time-accordion" style="max-width: none;">
+                    <div class="faq-item" style="border: none; box-shadow: none; background: transparent;">
+                        <button class="faq-question" style="background: #fff; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--primary-color); box-shadow: 0 2px 8px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                            <div style="text-align: left;">
+                                <h3 style="margin-top: 0; margin-bottom: 0; color: var(--primary-color);">Part time</h3>
+                            </div>
+                            <div class="faq-icon" style="font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: var(--primary-color); line-height: 1;">+</div>
+                        </button>
+                        <div class="faq-answer" style="background: transparent;">
+                            <div class="faq-answer-content" style="background: #fff; border-radius: 0 0 8px 8px; padding: 1.5rem; border-left: 4px solid var(--primary-color); box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-top: -8px;">
+                                <div>
+                                    <h4 style="margin-top: 0; margin-bottom: 0px; color: var(--primary-color); font-size: 1.1rem;">Whole day</h4>
+                                    <p style="margin-top: 0; margin-bottom: 0.5rem; color: #555; font-size: 0.95rem;">9 am - 4 pm</p>
+                                </div>
+                                <ul style="list-style-type: none; margin-left: 0; padding-left: 0;">
+                                    <li style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #eee;">
+                                        <span>2 days/week</span>
+                                        <strong>$1000 / mo</strong>
+                                    </li>
+                                    <li style="display: flex; justify-content: space-between; padding: 0.5rem 0;">
+                                        <span>3 days/week</span>
+                                        <strong>$1450 / mo</strong>
+                                    </li>
+                                </ul>
+
+                                <div style="margin-top: 1.5rem;">
+                                    <h4 style="margin-top: 0; margin-bottom: 0px; color: var(--primary-color); font-size: 1.1rem;">Morning and lunch</h4>
+                                    <p style="margin-top: 0; margin-bottom: 0.5rem; color: #555; font-size: 0.95rem;">9 am - 1 pm</p>
+                                </div>
+                                <ul style="list-style-type: none; margin-left: 0; padding-left: 0;">
+                                    <li style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #eee;">
+                                        <span>2 days/week</span>
+                                        <strong>$610 / mo</strong>
+                                    </li>
+                                    <li style="display: flex; justify-content: space-between; padding: 0.5rem 0;">
+                                        <span>3 days/week</span>
+                                        <strong>$880 / mo</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        const faqItems = document.querySelectorAll('#part-time-accordion .faq-item');
+                        faqItems.forEach(item => {
+                            const question = item.querySelector('.faq-question');
+                            const answer = item.querySelector('.faq-answer');
+                            question.addEventListener('click', () => {
+                                item.classList.toggle('active');
+                                if (item.classList.contains('active')) {
+                                    answer.style.maxHeight = answer.scrollHeight + "px";
+                                } else {
+                                    answer.style.maxHeight = null;
+                                }
+                            });
+                        });
+                    });
+                </script>
             </div>
         </section>
     </main>
