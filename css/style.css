@@ -399,3 +399,18 @@ nav ul li ul li a:hover {
     font-weight: 800;
     color: var(--primary-color);
 }
+
+/* Homepage Links */
+.inline-link {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: rgba(100, 94, 42, 0.4);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.2s ease, color 0.2s ease;
+}
+
+.inline-link:hover {
+    color: var(--hover-color);
+    text-decoration-color: var(--hover-color);
+}
