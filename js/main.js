@@ -9,13 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const dropdowns = document.querySelectorAll('.dropdown > a');
-    dropdowns.forEach(dropdown => {
-        dropdown.addEventListener('click', (e) => {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                dropdown.parentElement.classList.toggle('active');
-            }
-        });
+    const dropdownLinks = document.querySelectorAll('nav > ul > li > a');
+    dropdownLinks.forEach(link => {
+        if (link.nextElementSibling && link.nextElementSibling.tagName === 'UL') {
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    link.parentElement.classList.toggle('active');
+                }
+            });
+        }
     });
 });
