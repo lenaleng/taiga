@@ -414,3 +414,115 @@ nav ul li ul li a:hover {
     color: var(--hover-color);
     text-decoration-color: var(--hover-color);
 }
+
+/* Mobile Navigation Styles */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 100%;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    header {
+        position: relative;
+    }
+    
+    .brand {
+        display: flex;
+        justify-content: space-between;
+        align-width: 100%;
+    }
+    
+    header {
+        flex-wrap: wrap; /* allow nav to expand properly under brand */
+        justify-content: space-between;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+    }
+
+    nav > ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* just below header */
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        padding: 0;
+        margin: 0;
+        z-index: 999;
+    }
+
+    nav > ul.active {
+        display: flex;
+    }
+
+    nav > ul > li {
+        margin: 0;
+        width: 100%;
+    }
+
+    nav > ul > li > a {
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #eee;
+    }
+
+    /* Dropdowns on mobile */
+    .dropdown > ul {
+        position: static;
+        display: none;
+        box-shadow: none;
+        background-color: #fafafa;
+        width: 100%;
+        padding-left: 0;
+        margin-top: 0;
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .dropdown.active > ul {
+        display: block;
+    }
+
+    .dropdown > ul li a {
+        padding: 0.8rem 2rem 0.8rem 3rem;
+        border-bottom: 1px solid #eee;
+        display: block;
+        color: #555;
+    }
+    
+    /* Hamburger animation */
+    .menu-toggle.is-active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .menu-toggle.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.is-active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+}
