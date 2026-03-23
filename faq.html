@@ -66,9 +66,12 @@
 
     <main>
         <div class="hero fullscreen-bg">
-            <img src="photos/kids/IMG_3436_lg.jpg"
-                srcset="photos/kids/IMG_3436_sm.jpg 640w, photos/kids/IMG_3436_md.jpg 1024w, photos/kids/IMG_3436_lg.jpg 1920w"
-                sizes="100vw" alt="FAQ background" class="hero-image" style="object-position: center 30%;">
+            <picture>
+                <source media="(max-width: 768px)" srcset="photos/kids/IMG_3436_v_sm.jpg 640w, photos/kids/IMG_3436_v_md.jpg 1024w">
+                <img src="photos/kids/IMG_3436_lg.jpg"
+                    srcset="photos/kids/IMG_3436_sm.jpg 640w, photos/kids/IMG_3436_md.jpg 1024w, photos/kids/IMG_3436_lg.jpg 1920w"
+                    sizes="100vw" alt="FAQ background" class="hero-image" style="object-position: center 30%;">
+            </picture>
             <div class="hero-overlay"></div>
             <h1 class="page-title">FAQ</h1>
         </div>
