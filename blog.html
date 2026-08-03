@@ -82,17 +82,22 @@
             margin-top: 0.75rem;
         }
 
-        .share-links a {
+        .share-links a,
+        .share-links button {
             display: inline-block;
             padding: 0.55rem 1rem;
             border: 1px solid var(--primary-color);
             border-radius: 999px;
+            background: transparent;
             color: var(--primary-color);
+            font: inherit;
             font-weight: 600;
             text-decoration: none;
+            cursor: pointer;
         }
 
-        .share-links a:hover {
+        .share-links a:hover,
+        .share-links button:hover {
             background: var(--primary-color);
             color: #fff;
         }
@@ -236,9 +241,11 @@
                 <div class="share-section">
                     <h3>Share</h3>
                     <div class="share-links">
+                        <button type="button" id="share-article">Share this article</button>
                         <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftaiga-school.com%2Fblog.html" target="_blank" rel="noopener noreferrer">Facebook</a>
                         <a href="mailto:?subject=Why%20More%20Time%20Outdoors%20Matters&amp;body=https%3A%2F%2Ftaiga-school.com%2Fblog.html">Email</a>
                     </div>
+                    <p id="share-status" role="status" aria-live="polite"></p>
                 </div>
             </article>
         </section>
@@ -252,6 +259,41 @@
         </div>
     </footer>
     <script src="js/main.js"></script>
+    <script>
+        const shareButton = document.getElementById('share-article');
+        const shareStatus = document.getElementById('share-status');
+        const shareData = {
+            title: 'Why More Time Outdoors May Be One of the Best Investments in Your Child’s Future',
+            text: 'Discover how time in nature helps children build creativity, resilience, and executive function.',
+            url: window.location.href
+        };
+
+        shareButton.addEventListener('click', async () => {
+            shareStatus.textContent = '';
+
+            if (navigator.share) {
+                try {
+                    await navigator.share(shareData);
+                } catch (error) {
+                    if (error.name !== 'AbortError') {
+                        shareStatus.textContent = 'Sharing is unavailable right now.';
+                    }
+                }
+                return;
+            }
+
+            try {
+                await navigator.clipboard.writeText(shareData.url);
+                shareButton.textContent = 'Link copied!';
+                shareStatus.textContent = 'The article link has been copied to your clipboard.';
+                window.setTimeout(() => {
+                    shareButton.textContent = 'Share this article';
+                }, 2500);
+            } catch (error) {
+                window.prompt('Copy this article link:', shareData.url);
+            }
+        });
+    </script>
 </body>
 
 </html>
