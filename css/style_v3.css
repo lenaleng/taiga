@@ -48,6 +48,38 @@ header {
     align-items: center;
 }
 
+.brand-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.brand-logo img {
+    display: block;
+    width: 150px;
+    height: auto;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.18));
+}
+
+.brand-logo-caption {
+    margin-top: -4px;
+    font-size: 0.58rem;
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: 0.55px;
+    opacity: 0.82;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.brand-logo-location {
+    margin-top: 3px;
+    font-size: 0.52rem;
+    opacity: 0.72;
+}
+
 .logo-stack {
     display: flex;
     flex-direction: column;
@@ -106,6 +138,22 @@ nav>ul>li>a {
 
 nav>ul>li>a:hover {
     color: #e0d9b4;
+}
+
+@media (min-width: 769px) and (max-width: 1100px) {
+    html[lang="ru"] header {
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+    }
+
+    html[lang="ru"] nav > ul {
+        gap: 1.1rem;
+    }
+
+    html[lang="ru"] nav > ul > li > a {
+        font-size: 0.86rem;
+        white-space: nowrap;
+    }
 }
 
 /* Dropdown */
@@ -551,6 +599,18 @@ nav ul li ul li a:hover {
 }
 
 @media (max-width: 768px) {
+    .brand-logo img {
+        width: 120px;
+    }
+
+    .brand-logo-caption {
+        font-size: 0.5rem;
+    }
+
+    .brand-logo-location {
+        font-size: 0.46rem;
+    }
+
     header {
         position: relative;
         flex-wrap: nowrap;
